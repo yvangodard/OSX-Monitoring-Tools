@@ -186,7 +186,7 @@ done
 
 # Generate first line message for Centreon
 [[ ${numberExpiredCertificates} -eq 1 ]] && echo "1 certificate has expired" >> ${messageContent}
-[[ ${numberExpiredCertificates} -gt 1 ]] && echo "${numberExpiredCertificates} ceertificates had expired" >> ${messageContent}
+[[ ${numberExpiredCertificates} -gt 1 ]] && echo "${numberExpiredCertificates} certificates had expired" >> ${messageContent}
 
 [[ ${numberProblemCertificates} -eq 1 ]] && echo "Problem to read 1 certificate" >> ${messageContent}
 [[ ${numberProblemCertificates} -gt 1 ]] && echo "Problem to read ${numberProblemCertificates} certificates" >> ${messageContent}
