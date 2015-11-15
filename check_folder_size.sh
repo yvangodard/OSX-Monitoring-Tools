@@ -178,7 +178,6 @@ done
 [[ `whoami` != 'root' ]] && endThisScript 2 "dontRemoveDuTemp" "FATAL ERROR - This tool needs a root access. Use 'sudo'."
 
 # Test format blockSize
-[[ "${blockSize}" != "k" ]] && [[ "${blockSize}" != "m" ]] && [[ "${blockSize}" != "g" ]] && 
 if [[ "${blockSize}" == "m" ]]; then
 	blockSizeFriendly="MB"
 elif [[ "${blockSize}" == "k" ]]; then
@@ -187,7 +186,7 @@ elif [[ "${blockSize}" == "g" ]]; then
 	blockSizeFriendly="GB"
 else
 	echo "You have entered '-b ${blockSize}' but this parameter can only be filled with k (KB), m (MB) or g (GB)." >> ${messageContent}
-	endThisScript 2 "ERROR - blocksize parameter can only be k, m or g."
+	endThisScript 2 "removeDuTemp" "ERROR - blocksize parameter can only be k, m or g."
 fi
 
 # Test warnThresh and critThresh are integer
