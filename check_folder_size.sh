@@ -291,7 +291,6 @@ if [[ ${withTimeLimit} = "1" ]]; then
 		echo "We don't have any previous value to use if the script has not finished calculating the size of the folder within that time." >> ${messageContent}
 		echo "But from now we will have one!" >> ${messageContent}
 		echo "" >> ${messageContent}
-		echo "$(date)" >> ${messageContent}
 		echo "Actual size of folder '${folderPath%/}' has been saved on buffer file '${bufferFile}'." >> ${messageContent}
 		processingOutputTest "removeDuTemp"
 	fi
