@@ -17,7 +17,7 @@
 
 #	The script takes the following arguments:
 #	-n		Quoted list (space delimited) of counter names you want to query.
-#	-n		Quoted list (space delimited) (same order) of warning thresholds for the counters.
+#	-w		Quoted list (space delimited) (same order) of warning thresholds for the counters.
 #	-c		Quoted list (space delimited) (same order) of critical thresholds for the counters.
 #
 #	Examples:
