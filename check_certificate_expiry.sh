@@ -4,6 +4,10 @@
 #       Original script by Jedda Wignall - http://jedda.me
 #       Modded to work both on Mac & Linux by Yvan GODARD - godardyvan@gmail.com - http://www.yvangodard.me
 
+#       v2.1 - 11 Apr 2017
+#       Modded to work LetsEncrypt
+#       Complete refactoring
+
 #       v2.0 - 18 Sep 2015
 #       Modded to work both on Mac & Linux.
 #		Complete refactoring
@@ -16,7 +20,7 @@
 
 #       This script checks the expiry dates of all certificates in a path and returns a warning if needed based on your defined number of days.
 
-version="check_certificate_expiry v2.0 - 2015, Yvan Godard [godardyvan@gmail.com] - http://www.yvangodard.me"
+version="check_certificate_expiry v2.1 - 2015, Yvan Godard [godardyvan@gmail.com] - http://www.yvangodard.me"
 system=$(uname -a)
 currentDate=$(date "+%s")
 critical=0
@@ -129,8 +133,8 @@ echo ${days} | grep "^[ [:digit:] ]*$" > /dev/null 2>&1
 for directoryToCheck in $(cat ${pathToCheck})
 do
 	if [[ -d ${directoryToCheck} ]]; then
-		[[ ${recursivity} -eq 1 ]] && find ${directoryToCheck%/} -type f -name "*${extension}" >> ${certificatesList}
-		[[ ${recursivity} -eq 0 ]] && find ${directoryToCheck%/} -maxdepth 1 -type f -name "*${extension}" >> ${certificatesList}
+		[[ ${recursivity} -eq 1 ]] && find ${directoryToCheck%/} -type f -follow -name "*${extension}" >> ${certificatesList}
+		[[ ${recursivity} -eq 0 ]] && find ${directoryToCheck%/} -maxdepth 1 -type f -follow -name "*${extension}" >> ${certificatesList}
 	fi
 done
 
