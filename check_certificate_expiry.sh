@@ -6,7 +6,6 @@
 
 #       v2.1 - 11 Apr 2017
 #       Modded to work LetsEncrypt
-#       Complete refactoring
 
 #       v2.0 - 18 Sep 2015
 #       Modded to work both on Mac & Linux.
